@@ -1,0 +1,10 @@
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\bin\Debug\MathClass.exe.config
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\bin\Debug\MathClass.exe
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\bin\Debug\MathClass.pdb
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\bin\Debug\MathClass.xml
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.Form1.resources
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.Resources.resources
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.vbproj.GenerateResource.Cache
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.exe
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.xml
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.pdb
