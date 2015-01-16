@@ -1,13 +1,22 @@
 ﻿Imports System.Math
 Public Class Math
-    Public Shared Function str2mat(str As String) As Double()
+    Public Shared Function factorial(number As Integer) As Integer
+        Dim c, fact As Integer
+        fact = 1
+        For c = 1 To number
+            fact = fact * c
+        Next
+        Return fact
+    End Function
+
+    Public Shared Function str2mat(str As String, separator As String) As Double()
         Dim n As Integer
-        Dim separators As New List(Of Integer)
-        'get separators and number of elements
+        Dim positions As New List(Of Integer)
+        'get positions and number of elements
         For i = 0 To str.Length - 1
-            If str.Chars(i) = " " Then
+            If str.Chars(i) = separator Then
                 n += 1
-                separators.Add(i)
+                positions.Add(i)
             End If
         Next
         'add elements to the array
@@ -16,14 +25,14 @@ Public Class Math
             Dim start, length As Integer
             If i = 0 Then
                 start = 0
-                length = separators(0)
+                length = positions(0)
                 mat(0) = Double.Parse(str.Substring(start, length))
             Else
-                start = separators(i - 1) + 1
+                start = positions(i - 1) + 1
                 If i = mat.Length - 1 Then
                     mat(i) = Double.Parse(str.Substring(start))
                 Else
-                    length = separators(i) - separators(i - 1) - 1
+                    length = positions(i) - positions(i - 1) - 1
                     mat(i) = Double.Parse(str.Substring(start, length))
                 End If
             End If
@@ -31,35 +40,34 @@ Public Class Math
         Return mat
     End Function
 
-    Public Shared Function str2mat2(str As String) As Double()
-        'calculate matrix length
-        Dim n As Integer
-        For Each element As Char In str
-            If IsNumeric(element) Then
-                n += 1
-            End If
-        Next
-        'Convert "x;y;z" to "xyz"
-        Dim mat(n - 1) As Double
-        Dim convrtdstr As String = ""
+    'Public Shared Function str2mat2(str As String) As Double()
+    '    'calculate matrix length
+    '    Dim n As Integer
+    '    For Each element As Char In str
+    '        If IsNumeric(element) Then
+    '            n += 1
+    '        End If
+    '    Next
+    '    'Convert "x;y;z" to "xyz"
+    '    Dim mat(n - 1) As Double
+    '    Dim convrtdstr As String = ""
 
-        For Each element As Char In str
-            If IsNumeric(element) Or element = "-" Then
-                convrtdstr += element
-            End If
-        Next
-        'Add items to array
-        For i = 0 To mat.Length - 1
-            If convrtdstr(i) = "-" Then
-                mat(i) = Double.Parse(convrtdstr(i) + convrtdstr(i + 1))
-                Exit For
-            Else
-                mat(i) = Double.Parse(convrtdstr(i))
-            End If
-        Next
-        Return mat
-    End Function
-
+    '    For Each element As Char In str
+    '        If IsNumeric(element) Or element = "-" Then
+    '            convrtdstr += element
+    '        End If
+    '    Next
+    '    'Add items to array
+    '    For i = 0 To mat.Length - 1
+    '        If convrtdstr(i) = "-" Then
+    '            mat(i) = Double.Parse(convrtdstr(i) + convrtdstr(i + 1))
+    '            Exit For
+    '        Else
+    '            mat(i) = Double.Parse(convrtdstr(i))
+    '        End If
+    '    Next
+    '    Return mat
+    'End Function
     Public Shared Function rootsquadratic(a As Double, b As Double, c As Double) As List(Of String)
         Dim real, imag, g As Double
         Dim root1, root2 As String
@@ -103,7 +111,6 @@ Public Class Math
         End If
         Return x - diff / 10
     End Function
-
     Public Shared Function solvequadratic(a, b, c) As Double
         Dim xnext, xo, fx, fxdrev, delta As Double
         xo = 0
@@ -127,16 +134,37 @@ Public Class Math
         Return xnext
     End Function
 
-    Public Shared Function solveall(arr As Double()) As Double
-        Dim xnext, xo, fx, fxdrev, delta, power As Double
-        xo = 5
+    Public Shared Function polyval(arr As Double(), value As Double) As Double
+        Dim power, fx, xo As Double
+        xo = value
         power = arr.Length - 1
+        For i = 0 To power
+            fx += arr(i) * (xo ^ (power - i))
+        Next
+        Return fx
+    End Function
+    Public Shared Function epsilon() As Double
+        Dim eps As Double
+        eps = 1
+        Do While eps + 1 > 1
+            eps = eps / 2
+        Loop
+        Return eps
+    End Function
+    Public Shared Function solveall(arr As Double()) As Double
+        Dim xnext, fx, fxdrev, delta, power, xo As Double
+        power = arr.Length - 1
+        xo = 0
         Dim define = Sub()
                          fx = 0
                          fxdrev = 0
                          For i = 0 To power
                              fx += arr(i) * (xo ^ (power - i))
-                             fxdrev += (power - i) * arr(i) * (xo ^ (power - i - 1))
+                             If i = power Then
+                                 fxdrev += 0
+                             Else
+                                 fxdrev += (power - i) * arr(i) * (xo ^ (power - i - 1))
+                             End If
                          Next
                      End Sub
         define()
@@ -148,7 +176,7 @@ Public Class Math
         End If
         xnext = xo - fx / fxdrev
         delta = xo - xnext
-        Do While Abs(delta) > 0.0001
+        Do While Abs(delta) > epsilon()
             xo = xnext
             define()
             xnext = xo - fx / fxdrev
@@ -156,6 +184,22 @@ Public Class Math
         Loop
         Return xnext
     End Function
+    Public Shared Function differentiate(array As Double(), value As Double) As Double
+        Dim power, fxdrev, fx, xo As Double
+        xo = value
+        power = array.Length - 1
+        For i = 0 To power
+            fx += array(i) * (xo ^ (power - i))
+            fxdrev += (power - i) * array(i) * (xo ^ (power - i - 1))
+        Next
+        Return fxdrev
+    End Function
 
-
+    Public Shared Function findroots(arr() As Double) As List(Of Double)
+        Dim roots As New List(Of Double)
+        Dim currentroot, prevroot As Double
+        currentroot = solveall(arr)
+        roots.Add(currentroot)
+        Return roots
+    End Function
 End Class

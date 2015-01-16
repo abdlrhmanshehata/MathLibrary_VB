@@ -2,12 +2,16 @@
 Public Class Form1
 #Region "Solver"
     Private Sub btnCalculate_Click() Handles btn_Calculate.Click
-        Dim x As Double()
-        x = str2mat(txt_arr.Text)
-        txt_result.Text = solveall(x)
+        'Dim roots As New List(Of Double)
+        'roots = findroots(str2mat(txt_arr.Text, " "))
+        'rtxt_result.Clear()
+        'For i = 0 To roots.Count - 1
+        '    rtxt_result.SelectedText = "Root " & i + 1 & ": " & roots(i) & vbNewLine
+        'Next
+        MsgBox(solveall(str2mat(txt_arr.Text, " ")))
     End Sub
     Private Sub btn_Optimize_Click(sender As Object, e As EventArgs) Handles btn_Optimize.Click
-        txt_arr.Text = "1 1 -1 2"
+        txt_arr.Text = "1 1 -1"
     End Sub
 #End Region
 #Region "RootsQuadratic"
@@ -24,8 +28,15 @@ Public Class Form1
     End Sub
 #End Region
     
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim arr() As Double
+        arr = str2mat(txt_polyvalarray.Text, ";")
+        txt_polyvalresult.Text = polyval(arr, txt_polyvalvalue.Text)
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim x As String = "1;2;2.3"   
+        MsgBox(0 * -1 * (0 ^ 0))
     End Sub
 End Class
 
