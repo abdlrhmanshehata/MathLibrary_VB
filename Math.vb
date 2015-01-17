@@ -8,7 +8,6 @@ Public Class Math
         Next
         Return fact
     End Function
-
     Public Shared Function str2mat(str As String, separator As String) As Double()
         Dim n As Integer
         Dim positions As New List(Of Integer)
@@ -39,7 +38,6 @@ Public Class Math
         Next
         Return mat
     End Function
-
     'Public Shared Function str2mat2(str As String) As Double()
     '    'calculate matrix length
     '    Dim n As Integer
@@ -133,7 +131,6 @@ Public Class Math
         Loop
         Return xnext
     End Function
-
     Public Shared Function polyval(arr As Double(), value As Double) As Double
         Dim power, fx, xo As Double
         xo = value
@@ -151,10 +148,10 @@ Public Class Math
         Loop
         Return eps
     End Function
-    Public Shared Function solveall(arr As Double()) As Double
-        Dim xnext, fx, fxdrev, delta, power, xo As Double
+    Public Shared Function solveall(arr As Double(), xo As Double) As Double
+        Dim xnext, fx, fxdrev, delta, power As Double
         power = arr.Length - 1
-        xo = 0
+
         Dim define = Sub()
                          fx = 0
                          fxdrev = 0
@@ -197,9 +194,13 @@ Public Class Math
 
     Public Shared Function findroots(arr() As Double) As List(Of Double)
         Dim roots As New List(Of Double)
-        Dim currentroot, prevroot As Double
-        currentroot = solveall(arr)
-        roots.Add(currentroot)
+        Dim currentroot As Double
+        For i = -1 To 1 Step 0.01
+            currentroot = Round(solveall(arr, i), 8)
+            If Not roots.Contains(currentroot) Then
+                roots.Add(currentroot)
+            End If
+        Next
         Return roots
     End Function
 End Class
