@@ -27,6 +27,11 @@ Public Class Form1
         txt_polyvalresult.Text = polyval(arr, txt_polyvalvalue.Text)
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+       
+    End Sub
+
+    Private Sub btn_Start_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
+        txt_Respond.Text = differentiate(txt_User.Text, 2)
     End Sub
 End Class
 
