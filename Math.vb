@@ -1,5 +1,34 @@
 ﻿Imports System.Math
 Public Class Math
+    Enum Variables
+        a
+        b
+        c
+        d
+        e
+        f
+        g
+        h
+        i
+        j
+        k
+        l
+        m
+        n
+        o
+        p
+        q
+        r
+        s
+        t
+        u
+        v
+        w
+        x
+        y
+        z
+    End Enum
+
     Public Shared Function factorial(number As Integer) As Integer
         Dim c, fact As Integer
         fact = 1
@@ -34,13 +63,13 @@ Public Class Math
         Dim operindex As Integer = Formula.IndexOf(oper)
         Dim lefthand, righthand, extracted As String
 
-        For i = 0 To formula.Length - 1
-            Dim bit As String = formula.Chars(i)
+        For i = 0 To Formula.Length - 1
+            Dim bit As String = Formula.Chars(i)
             If bit = "+" Or bit = "-" Or bit = "*" Or bit = "/" Or bit = "^" Then
                 positions.Add(i)
             End If
         Next
-         
+
         '1.Right Hand Side
         start = operindex + 1
         Try
@@ -153,7 +182,7 @@ Public Class Math
         Return Result
     End Function
 #End Region
-   
+
 
     Public Shared Function str2mat(str As String, separator As String) As Double()
         Dim n As Integer
@@ -216,7 +245,7 @@ Public Class Math
         Return terms
     End Function
 
-    
+
     Public Overloads Shared Function polyval(arr As Double(), value As Double) As Double
         Dim power, fx, xo As Double
         xo = value
@@ -226,9 +255,9 @@ Public Class Math
         Next
         Return fx
     End Function
-    Public Overloads Shared Function polyval(Equation As String, value As Double) As Double
-        If Equation.Contains("x") Then
-            Equation = Equation.Replace("x", value.ToString)
+    Public Overloads Shared Function polyval(Equation As String, Variable As String, value As Double) As Double
+        If Equation.Contains(Variable) Then
+            Equation = Equation.Replace(Variable, value.ToString)
         End If
         Do While Equation.Contains("(") And Equation.Contains(")")
             Dim start, length As Integer
@@ -341,12 +370,12 @@ Public Class Math
         x = value
         h = 10 ^ -8 * x
         x_h = x + h
-        fx = polyval(formula, x)
-        fx_h = polyval(formula, x_h)
+        fx = polyval(formula, "x", x)
+        fx_h = polyval(formula, "x", x_h)
         result = (fx_h - fx) / h
         Return result
     End Function
-    
+
 End Class
 'Public Shared Function str2mat2(str As String) As Double()
 '    'calculate matrix length

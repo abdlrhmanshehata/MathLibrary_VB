@@ -5,9 +5,14 @@ Public Class Plotting
         Dim NewSeries As Series
         chart.Series.Clear()
         NewSeries = chart.Series.Add(SeriesName)
-        For i = 0 To X.Length - 1
-            NewSeries.Points.AddXY(X(i), Y(i))
-        Next
+        Try
+            For i = 0 To X.Length - 1
+                NewSeries.Points.AddXY(X(i), Y(i))
+            Next
+        Catch ex As Exception
+
+        End Try
+      
         NewSeries.ChartType = SeriesChartType.Line
     End Sub
     Public Overloads Shared Sub plot(ByVal chart As Chart, SeriesName As String, X As Double(), Equation As String)
@@ -18,7 +23,7 @@ Public Class Plotting
 
         Dim Y As New List(Of Double)
         For i = 0 To X.Length - 1
-            Y.Add(polyval(Equation, X(i)))
+            Y.Add(polyval(Equation, "x", X(i)))
         Next
 
         For i = 0 To X.Length - 1

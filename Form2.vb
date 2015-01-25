@@ -15,4 +15,21 @@ Public Class Form2
         Dim Formula As String = TextBox2.Text
         plot(Chart2, "Test", x, Formula)
     End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim EquX As String = "y^2+4*y"
+        Dim EquY As String = "z^3+4*z"
+        Dim EquZ As String = "5*k^2+4*k"
+        Dim X, Y, Z As Double
+
+        Z = polyval(EquZ, "k", 4)
+        Y = polyval(EquY, "z", Z)
+        X = polyval(EquX, "y", Y)
+
+        MsgBox(X)
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        Chart2.Series.Clear()
+    End Sub
 End Class
