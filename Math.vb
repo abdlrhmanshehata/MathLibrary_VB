@@ -50,7 +50,6 @@ Public Class Math
         End Try
         righthand = Formula.Substring(start, length)
 
-
         '2.Left Hand Side
         start = operindex - 1
         Try
@@ -62,18 +61,20 @@ Public Class Math
 
         '3.Extracted
         extracted = lefthand & oper & righthand
-        MsgBox(extracted)
         Return extracted
     End Function
 
-
+#Region "Evaluation"
     Public Shared Function EvaluateSimple(formula As String) As Double
         Dim value As Double
         Dim array() As Double
         Dim operation As String = ""
         For Each bit As Char In formula
-            If bit = "*" Or bit = "/" Or bit = "^" Or bit = "+" Or bit = "-" Then
+            If bit = "*" Or bit = "/" Or bit = "^" Then
                 operation = bit
+                Exit For
+            ElseIf bit = "+" Or bit = "-" Then
+                operation = "+-"
                 Exit For
             End If
         Next
@@ -129,13 +130,10 @@ Public Class Math
                     value = value ^ array(n + 1)
                 Next
         End Select
-        MsgBox(value)
         Return value
     End Function
-    Public Shared Function EvaluateAdvanced(Equation As String, value As Double) As Double
+    Public Shared Function EvaluateAdvanced(Equation As String) As Double
         Dim Result As Double
-        Equation = Equation.Replace("x", value.ToString)
-
         Dim calculate = Sub(oper As Char)
                             Do While Equation.Contains(oper)
                                 Dim extractedstring As String = extract(Equation, oper)
@@ -144,20 +142,18 @@ Public Class Math
                             Loop
                         End Sub
 
-        MsgBox(Equation)
         calculate("^")
-        MsgBox(Equation)
         calculate("*")
-        MsgBox(Equation)
         calculate("/")
-        MsgBox(Equation)
-        If Not IsNumeric(Equation) Then
+        If IsNumeric(Equation) = False Then
             Result = EvaluateSimple(Equation)
         Else
             Result = Double.Parse(Equation)
         End If
         Return Result
     End Function
+#End Region
+   
 
     Public Shared Function str2mat(str As String, separator As String) As Double()
         Dim n As Integer
@@ -189,13 +185,12 @@ Public Class Math
         Next
         Return mat
     End Function
-
-    Public Overloads Shared Function separateterms(str As String, sep As String) As String()
+    Public Shared Function Substring(Original As String, Separator As String) As String()
         Dim n As Integer
         Dim positions As New List(Of Integer)
         'get positions and number of separators
-        For i = 0 To str.Length - 1
-            If str.Chars(i) = sep Then
+        For i = 0 To Original.Length - 1
+            If Original.Chars(i) = Separator Then
                 n += 1
                 positions.Add(i)
             End If
@@ -207,14 +202,14 @@ Public Class Math
             If i = 0 Then
                 start = 0
                 length = positions(0)
-                terms(0) = str.Substring(start, length)
+                terms(0) = Original.Substring(start, length)
             Else
                 start = positions(i - 1) + 1
                 If i = terms.Length - 1 Then
-                    terms(i) = str.Substring(start)
+                    terms(i) = Original.Substring(start)
                 Else
                     length = positions(i) - positions(i - 1) - 1
-                    terms(i) = str.Substring(start, length)
+                    terms(i) = Original.Substring(start, length)
                 End If
             End If
         Next
@@ -231,7 +226,40 @@ Public Class Math
         Next
         Return fx
     End Function
+    Public Overloads Shared Function polyval(Equation As String, value As Double) As Double
+        If Equation.Contains("x") Then
+            Equation = Equation.Replace("x", value.ToString)
+        End If
+        Do While Equation.Contains("(") And Equation.Contains(")")
+            Dim start, length As Integer
+            Dim Inside_Brackets As String
+            '1. Define Start And length
+            start = Equation.LastIndexOf("(") + 1
+            length = 0
+            For i = start To Equation.Length - 1
+                'MsgBox(Equation.Chars(i))
+                If Equation.Chars(i) = ")" Then
+                    Exit For
+                End If
+                length += 1
+                'MsgBox(length)
+            Next
 
+            '2. See the special cases 4*(-3)
+            Inside_Brackets = Equation.Substring(start, length)
+            If IsNumeric(Inside_Brackets) Then
+
+            End If
+
+            '3. Replace the brackets with their value
+            Dim ToBeReplaced As String
+            ToBeReplaced = "(" & Inside_Brackets & ")"
+            Equation = Equation.Replace(ToBeReplaced, EvaluateAdvanced(Inside_Brackets).ToString)
+        Loop
+        Dim result As Double
+        result = EvaluateAdvanced(Equation)
+        Return result
+    End Function
     Public Shared Function rootsquadratic(a As Double, b As Double, c As Double) As List(Of String)
         Dim real, imag, g As Double
         Dim root1, root2 As String
@@ -311,15 +339,10 @@ Public Class Math
     Public Overloads Shared Function differentiate(formula As String, value As Double) As Double
         Dim x, fx, x_h, fx_h, h, result As Double
         x = value
-
-        MsgBox(fx)
-
-        h = x * 10 ^ -6
+        h = 10 ^ -8 * x
         x_h = x + h
-        MsgBox(x_h)
-
-        MsgBox(fx_h)
-
+        fx = polyval(formula, x)
+        fx_h = polyval(formula, x_h)
         result = (fx_h - fx) / h
         Return result
     End Function

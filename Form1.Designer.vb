@@ -32,6 +32,14 @@ Partial Class Form1
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.btn_Optimize = New System.Windows.Forms.Button()
         Me.tbpg_roots = New System.Windows.Forms.TabControl()
+        Me.tbg_Differentiate = New System.Windows.Forms.TabPage()
+        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
+        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
+        Me.txt_Respond = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txt_User = New System.Windows.Forms.TextBox()
+        Me.btn_Start = New System.Windows.Forms.Button()
         Me.tbpg_solver = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
@@ -59,14 +67,10 @@ Partial Class Form1
         Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_polyvalvalue = New System.Windows.Forms.TextBox()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.SplitContainer2 = New System.Windows.Forms.SplitContainer()
-        Me.TableLayoutPanel6 = New System.Windows.Forms.TableLayoutPanel()
-        Me.txt_Respond = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.txt_User = New System.Windows.Forms.TextBox()
-        Me.btn_Start = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txt_value = New System.Windows.Forms.TextBox()
+        Me.TableLayoutPanel7 = New System.Windows.Forms.TableLayoutPanel()
+        Me.btn_clear = New System.Windows.Forms.Button()
         Me.TLP1.SuspendLayout()
         CType(Me.Scont_A, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Scont_A.Panel1.SuspendLayout()
@@ -74,6 +78,12 @@ Partial Class Form1
         Me.Scont_A.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.tbpg_roots.SuspendLayout()
+        Me.tbg_Differentiate.SuspendLayout()
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SplitContainer2.Panel1.SuspendLayout()
+        Me.SplitContainer2.Panel2.SuspendLayout()
+        Me.SplitContainer2.SuspendLayout()
+        Me.TableLayoutPanel6.SuspendLayout()
         Me.tbpg_solver.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,12 +96,7 @@ Partial Class Form1
         Me.tbpg_polyval.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.TableLayoutPanel5.SuspendLayout()
-        Me.TabPage1.SuspendLayout()
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SplitContainer2.Panel1.SuspendLayout()
-        Me.SplitContainer2.Panel2.SuspendLayout()
-        Me.SplitContainer2.SuspendLayout()
-        Me.TableLayoutPanel6.SuspendLayout()
+        Me.TableLayoutPanel7.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_Calculate
@@ -99,7 +104,7 @@ Partial Class Form1
         Me.btn_Calculate.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_Calculate.Location = New System.Drawing.Point(3, 3)
         Me.btn_Calculate.Name = "btn_Calculate"
-        Me.btn_Calculate.Size = New System.Drawing.Size(154, 68)
+        Me.btn_Calculate.Size = New System.Drawing.Size(272, 59)
         Me.btn_Calculate.TabIndex = 0
         Me.btn_Calculate.Text = "Calculate"
         Me.btn_Calculate.UseVisualStyleBackColor = True
@@ -109,9 +114,9 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 26)
+        Me.Label2.Location = New System.Drawing.Point(3, 23)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 65)
+        Me.Label2.Size = New System.Drawing.Size(148, 57)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Result :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -131,16 +136,16 @@ Partial Class Form1
         Me.TLP1.RowCount = 2
         Me.TLP1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.09091!))
         Me.TLP1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.90909!))
-        Me.TLP1.Size = New System.Drawing.Size(321, 91)
+        Me.TLP1.Size = New System.Drawing.Size(557, 80)
         Me.TLP1.TabIndex = 9
         '
         'txt_arr
         '
         Me.txt_arr.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_arr.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_arr.Location = New System.Drawing.Point(91, 3)
+        Me.txt_arr.Location = New System.Drawing.Point(157, 3)
         Me.txt_arr.Name = "txt_arr"
-        Me.txt_arr.Size = New System.Drawing.Size(227, 22)
+        Me.txt_arr.Size = New System.Drawing.Size(397, 22)
         Me.txt_arr.TabIndex = 12
         Me.txt_arr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_arr.WordWrap = False
@@ -152,7 +157,7 @@ Partial Class Form1
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(3, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(82, 26)
+        Me.Label5.Size = New System.Drawing.Size(148, 23)
         Me.Label5.TabIndex = 3
         Me.Label5.Text = "Array:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -161,9 +166,9 @@ Partial Class Form1
         '
         Me.rtxt_result.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtxt_result.Font = New System.Drawing.Font("Courier New", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rtxt_result.Location = New System.Drawing.Point(91, 29)
+        Me.rtxt_result.Location = New System.Drawing.Point(157, 26)
         Me.rtxt_result.Name = "rtxt_result"
-        Me.rtxt_result.Size = New System.Drawing.Size(227, 59)
+        Me.rtxt_result.Size = New System.Drawing.Size(397, 51)
         Me.rtxt_result.TabIndex = 13
         Me.rtxt_result.Text = ""
         '
@@ -181,8 +186,8 @@ Partial Class Form1
         'Scont_A.Panel2
         '
         Me.Scont_A.Panel2.Controls.Add(Me.TLP1)
-        Me.Scont_A.Size = New System.Drawing.Size(321, 169)
-        Me.Scont_A.SplitterDistance = 74
+        Me.Scont_A.Size = New System.Drawing.Size(557, 149)
+        Me.Scont_A.SplitterDistance = 65
         Me.Scont_A.TabIndex = 10
         '
         'TableLayoutPanel2
@@ -197,22 +202,22 @@ Partial Class Form1
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(321, 74)
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(557, 65)
         Me.TableLayoutPanel2.TabIndex = 1
         '
         'btn_Optimize
         '
         Me.btn_Optimize.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_Optimize.Location = New System.Drawing.Point(163, 3)
+        Me.btn_Optimize.Location = New System.Drawing.Point(281, 3)
         Me.btn_Optimize.Name = "btn_Optimize"
-        Me.btn_Optimize.Size = New System.Drawing.Size(155, 68)
+        Me.btn_Optimize.Size = New System.Drawing.Size(273, 59)
         Me.btn_Optimize.TabIndex = 1
         Me.btn_Optimize.Text = "Load"
         Me.btn_Optimize.UseVisualStyleBackColor = True
         '
         'tbpg_roots
         '
-        Me.tbpg_roots.Controls.Add(Me.TabPage1)
+        Me.tbpg_roots.Controls.Add(Me.tbg_Differentiate)
         Me.tbpg_roots.Controls.Add(Me.tbpg_solver)
         Me.tbpg_roots.Controls.Add(Me.TabPage2)
         Me.tbpg_roots.Controls.Add(Me.tbpg_polyval)
@@ -220,8 +225,112 @@ Partial Class Form1
         Me.tbpg_roots.Location = New System.Drawing.Point(0, 0)
         Me.tbpg_roots.Name = "tbpg_roots"
         Me.tbpg_roots.SelectedIndex = 0
-        Me.tbpg_roots.Size = New System.Drawing.Size(335, 201)
+        Me.tbpg_roots.Size = New System.Drawing.Size(571, 181)
         Me.tbpg_roots.TabIndex = 0
+        '
+        'tbg_Differentiate
+        '
+        Me.tbg_Differentiate.Controls.Add(Me.SplitContainer2)
+        Me.tbg_Differentiate.Location = New System.Drawing.Point(4, 22)
+        Me.tbg_Differentiate.Name = "tbg_Differentiate"
+        Me.tbg_Differentiate.Padding = New System.Windows.Forms.Padding(3)
+        Me.tbg_Differentiate.Size = New System.Drawing.Size(563, 155)
+        Me.tbg_Differentiate.TabIndex = 3
+        Me.tbg_Differentiate.Text = "Differentiation"
+        Me.tbg_Differentiate.UseVisualStyleBackColor = True
+        '
+        'SplitContainer2
+        '
+        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.SplitContainer2.Location = New System.Drawing.Point(3, 3)
+        Me.SplitContainer2.Name = "SplitContainer2"
+        '
+        'SplitContainer2.Panel1
+        '
+        Me.SplitContainer2.Panel1.Controls.Add(Me.TableLayoutPanel6)
+        '
+        'SplitContainer2.Panel2
+        '
+        Me.SplitContainer2.Panel2.Controls.Add(Me.TableLayoutPanel7)
+        Me.SplitContainer2.Size = New System.Drawing.Size(557, 149)
+        Me.SplitContainer2.SplitterDistance = 397
+        Me.SplitContainer2.TabIndex = 1
+        '
+        'TableLayoutPanel6
+        '
+        Me.TableLayoutPanel6.ColumnCount = 2
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.93569!))
+        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.06431!))
+        Me.TableLayoutPanel6.Controls.Add(Me.txt_Respond, 1, 2)
+        Me.TableLayoutPanel6.Controls.Add(Me.Label9, 0, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Label10, 0, 2)
+        Me.TableLayoutPanel6.Controls.Add(Me.txt_User, 1, 0)
+        Me.TableLayoutPanel6.Controls.Add(Me.Label11, 0, 1)
+        Me.TableLayoutPanel6.Controls.Add(Me.txt_value, 1, 1)
+        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
+        Me.TableLayoutPanel6.RowCount = 3
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel6.Size = New System.Drawing.Size(397, 149)
+        Me.TableLayoutPanel6.TabIndex = 0
+        '
+        'txt_Respond
+        '
+        Me.txt_Respond.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_Respond.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_Respond.Location = New System.Drawing.Point(82, 101)
+        Me.txt_Respond.Multiline = True
+        Me.txt_Respond.Name = "txt_Respond"
+        Me.txt_Respond.ReadOnly = True
+        Me.txt_Respond.Size = New System.Drawing.Size(312, 45)
+        Me.txt_Respond.TabIndex = 2
+        Me.txt_Respond.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label9.Location = New System.Drawing.Point(3, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(73, 49)
+        Me.Label9.TabIndex = 0
+        Me.Label9.Text = "Equation"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label10.Location = New System.Drawing.Point(3, 98)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(73, 51)
+        Me.Label10.TabIndex = 0
+        Me.Label10.Text = "Result"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'txt_User
+        '
+        Me.txt_User.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_User.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_User.Location = New System.Drawing.Point(82, 3)
+        Me.txt_User.Multiline = True
+        Me.txt_User.Name = "txt_User"
+        Me.txt_User.Size = New System.Drawing.Size(312, 43)
+        Me.txt_User.TabIndex = 1
+        Me.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'btn_Start
+        '
+        Me.btn_Start.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_Start.Location = New System.Drawing.Point(3, 3)
+        Me.btn_Start.Name = "btn_Start"
+        Me.btn_Start.Size = New System.Drawing.Size(150, 68)
+        Me.btn_Start.TabIndex = 0
+        Me.btn_Start.Text = "Go"
+        Me.btn_Start.UseVisualStyleBackColor = True
         '
         'tbpg_solver
         '
@@ -229,7 +338,7 @@ Partial Class Form1
         Me.tbpg_solver.Location = New System.Drawing.Point(4, 22)
         Me.tbpg_solver.Name = "tbpg_solver"
         Me.tbpg_solver.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_solver.Size = New System.Drawing.Size(327, 175)
+        Me.tbpg_solver.Size = New System.Drawing.Size(563, 155)
         Me.tbpg_solver.TabIndex = 0
         Me.tbpg_solver.Text = "Equation Solver"
         Me.tbpg_solver.UseVisualStyleBackColor = True
@@ -240,7 +349,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(327, 175)
+        Me.TabPage2.Size = New System.Drawing.Size(563, 155)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Roots"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -259,8 +368,8 @@ Partial Class Form1
         'SplitContainer1.Panel2
         '
         Me.SplitContainer1.Panel2.Controls.Add(Me.TableLayoutPanel3)
-        Me.SplitContainer1.Size = New System.Drawing.Size(321, 169)
-        Me.SplitContainer1.SplitterDistance = 59
+        Me.SplitContainer1.Size = New System.Drawing.Size(557, 149)
+        Me.SplitContainer1.SplitterDistance = 52
         Me.SplitContainer1.TabIndex = 18
         '
         'TableLayoutPanel1
@@ -277,7 +386,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(321, 59)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(557, 52)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'btn_Roots
@@ -285,7 +394,7 @@ Partial Class Form1
         Me.btn_Roots.Dock = System.Windows.Forms.DockStyle.Fill
         Me.btn_Roots.Location = New System.Drawing.Point(3, 3)
         Me.btn_Roots.Name = "btn_Roots"
-        Me.btn_Roots.Size = New System.Drawing.Size(101, 53)
+        Me.btn_Roots.Size = New System.Drawing.Size(179, 46)
         Me.btn_Roots.TabIndex = 0
         Me.btn_Roots.Text = "Roots"
         Me.btn_Roots.UseVisualStyleBackColor = True
@@ -293,9 +402,9 @@ Partial Class Form1
         'Button1
         '
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.Location = New System.Drawing.Point(217, 3)
+        Me.Button1.Location = New System.Drawing.Point(373, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 53)
+        Me.Button1.Size = New System.Drawing.Size(181, 46)
         Me.Button1.TabIndex = 17
         Me.Button1.Text = "Test"
         Me.Button1.UseVisualStyleBackColor = True
@@ -303,9 +412,9 @@ Partial Class Form1
         'btn_Load
         '
         Me.btn_Load.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_Load.Location = New System.Drawing.Point(110, 3)
+        Me.btn_Load.Location = New System.Drawing.Point(188, 3)
         Me.btn_Load.Name = "btn_Load"
-        Me.btn_Load.Size = New System.Drawing.Size(101, 53)
+        Me.btn_Load.Size = New System.Drawing.Size(179, 46)
         Me.btn_Load.TabIndex = 12
         Me.btn_Load.Text = "Load"
         Me.btn_Load.UseVisualStyleBackColor = True
@@ -328,7 +437,7 @@ Partial Class Form1
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel3.Size = New System.Drawing.Size(321, 106)
+        Me.TableLayoutPanel3.Size = New System.Drawing.Size(557, 93)
         Me.TableLayoutPanel3.TabIndex = 0
         '
         'Label6
@@ -337,7 +446,7 @@ Partial Class Form1
         Me.Label6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label6.Location = New System.Drawing.Point(3, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 35)
+        Me.Label6.Size = New System.Drawing.Size(55, 31)
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Equation :"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -346,11 +455,11 @@ Partial Class Form1
         '
         Me.txt_root1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_root1.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_root1.Location = New System.Drawing.Point(64, 38)
+        Me.txt_root1.Location = New System.Drawing.Point(64, 34)
         Me.txt_root1.Multiline = True
         Me.txt_root1.Name = "txt_root1"
         Me.txt_root1.ReadOnly = True
-        Me.txt_root1.Size = New System.Drawing.Size(254, 29)
+        Me.txt_root1.Size = New System.Drawing.Size(490, 25)
         Me.txt_root1.TabIndex = 13
         Me.txt_root1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -362,7 +471,7 @@ Partial Class Form1
         Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel2.Location = New System.Drawing.Point(64, 3)
         Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(254, 29)
+        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(490, 25)
         Me.FlowLayoutPanel2.TabIndex = 1
         '
         'txt_consta
@@ -396,9 +505,9 @@ Partial Class Form1
         '
         Me.Label3.AutoSize = True
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label3.Location = New System.Drawing.Point(3, 70)
+        Me.Label3.Location = New System.Drawing.Point(3, 62)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(55, 36)
+        Me.Label3.Size = New System.Drawing.Size(55, 31)
         Me.Label3.TabIndex = 16
         Me.Label3.Text = "Root2 :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -407,11 +516,11 @@ Partial Class Form1
         '
         Me.txt_root2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_root2.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_root2.Location = New System.Drawing.Point(64, 73)
+        Me.txt_root2.Location = New System.Drawing.Point(64, 65)
         Me.txt_root2.Multiline = True
         Me.txt_root2.Name = "txt_root2"
         Me.txt_root2.ReadOnly = True
-        Me.txt_root2.Size = New System.Drawing.Size(254, 30)
+        Me.txt_root2.Size = New System.Drawing.Size(490, 25)
         Me.txt_root2.TabIndex = 14
         Me.txt_root2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -419,9 +528,9 @@ Partial Class Form1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label1.Location = New System.Drawing.Point(3, 35)
+        Me.Label1.Location = New System.Drawing.Point(3, 31)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 35)
+        Me.Label1.Size = New System.Drawing.Size(55, 31)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Root1 :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -432,7 +541,7 @@ Partial Class Form1
         Me.tbpg_polyval.Location = New System.Drawing.Point(4, 22)
         Me.tbpg_polyval.Name = "tbpg_polyval"
         Me.tbpg_polyval.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_polyval.Size = New System.Drawing.Size(327, 175)
+        Me.tbpg_polyval.Size = New System.Drawing.Size(563, 155)
         Me.tbpg_polyval.TabIndex = 2
         Me.tbpg_polyval.Text = "PolyVal"
         Me.tbpg_polyval.UseVisualStyleBackColor = True
@@ -455,7 +564,7 @@ Partial Class Form1
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
         Me.TableLayoutPanel4.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel4.Size = New System.Drawing.Size(321, 169)
+        Me.TableLayoutPanel4.Size = New System.Drawing.Size(557, 149)
         Me.TableLayoutPanel4.TabIndex = 0
         '
         'Button2
@@ -463,7 +572,7 @@ Partial Class Form1
         Me.Button2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Button2.Location = New System.Drawing.Point(3, 3)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(116, 50)
+        Me.Button2.Size = New System.Drawing.Size(206, 43)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Calculate"
         Me.Button2.UseVisualStyleBackColor = True
@@ -472,9 +581,9 @@ Partial Class Form1
         '
         Me.Label4.AutoSize = True
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label4.Location = New System.Drawing.Point(3, 56)
+        Me.Label4.Location = New System.Drawing.Point(3, 49)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(116, 56)
+        Me.Label4.Size = New System.Drawing.Size(206, 49)
         Me.Label4.TabIndex = 1
         Me.Label4.Text = "Equation :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -483,9 +592,9 @@ Partial Class Form1
         '
         Me.Label7.AutoSize = True
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label7.Location = New System.Drawing.Point(3, 112)
+        Me.Label7.Location = New System.Drawing.Point(3, 98)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(116, 57)
+        Me.Label7.Size = New System.Drawing.Size(206, 51)
         Me.Label7.TabIndex = 2
         Me.Label7.Text = "Result"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -494,21 +603,21 @@ Partial Class Form1
         '
         Me.txt_polyvalarray.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txt_polyvalarray.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_polyvalarray.Location = New System.Drawing.Point(125, 59)
+        Me.txt_polyvalarray.Location = New System.Drawing.Point(215, 52)
         Me.txt_polyvalarray.Multiline = True
         Me.txt_polyvalarray.Name = "txt_polyvalarray"
-        Me.txt_polyvalarray.Size = New System.Drawing.Size(193, 50)
+        Me.txt_polyvalarray.Size = New System.Drawing.Size(339, 43)
         Me.txt_polyvalarray.TabIndex = 3
         Me.txt_polyvalarray.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_polyvalresult
         '
         Me.txt_polyvalresult.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txt_polyvalresult.Location = New System.Drawing.Point(125, 115)
+        Me.txt_polyvalresult.Location = New System.Drawing.Point(215, 101)
         Me.txt_polyvalresult.Multiline = True
         Me.txt_polyvalresult.Name = "txt_polyvalresult"
         Me.txt_polyvalresult.ReadOnly = True
-        Me.txt_polyvalresult.Size = New System.Drawing.Size(193, 51)
+        Me.txt_polyvalresult.Size = New System.Drawing.Size(339, 45)
         Me.txt_polyvalresult.TabIndex = 4
         '
         'TableLayoutPanel5
@@ -519,11 +628,11 @@ Partial Class Form1
         Me.TableLayoutPanel5.Controls.Add(Me.Label8, 0, 0)
         Me.TableLayoutPanel5.Controls.Add(Me.txt_polyvalvalue, 1, 0)
         Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(125, 3)
+        Me.TableLayoutPanel5.Location = New System.Drawing.Point(215, 3)
         Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
         Me.TableLayoutPanel5.RowCount = 1
         Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(193, 50)
+        Me.TableLayoutPanel5.Size = New System.Drawing.Size(339, 43)
         Me.TableLayoutPanel5.TabIndex = 5
         '
         'Label8
@@ -532,7 +641,7 @@ Partial Class Form1
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label8.Location = New System.Drawing.Point(3, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(53, 50)
+        Me.Label8.Size = New System.Drawing.Size(98, 43)
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Value"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -540,118 +649,64 @@ Partial Class Form1
         'txt_polyvalvalue
         '
         Me.txt_polyvalvalue.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txt_polyvalvalue.Location = New System.Drawing.Point(62, 3)
+        Me.txt_polyvalvalue.Location = New System.Drawing.Point(107, 3)
         Me.txt_polyvalvalue.Multiline = True
         Me.txt_polyvalvalue.Name = "txt_polyvalvalue"
-        Me.txt_polyvalvalue.Size = New System.Drawing.Size(128, 44)
+        Me.txt_polyvalvalue.Size = New System.Drawing.Size(229, 37)
         Me.txt_polyvalvalue.TabIndex = 1
         '
-        'TabPage1
+        'Label11
         '
-        Me.TabPage1.Controls.Add(Me.SplitContainer2)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(327, 175)
-        Me.TabPage1.TabIndex = 3
-        Me.TabPage1.Text = "Write Equation"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.Label11.AutoSize = True
+        Me.Label11.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label11.Location = New System.Drawing.Point(3, 49)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(73, 49)
+        Me.Label11.TabIndex = 3
+        Me.Label11.Text = "Value"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'SplitContainer2
+        'txt_value
         '
-        Me.SplitContainer2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.SplitContainer2.Location = New System.Drawing.Point(3, 3)
-        Me.SplitContainer2.Name = "SplitContainer2"
+        Me.txt_value.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.txt_value.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_value.Location = New System.Drawing.Point(82, 52)
+        Me.txt_value.Multiline = True
+        Me.txt_value.Name = "txt_value"
+        Me.txt_value.Size = New System.Drawing.Size(312, 43)
+        Me.txt_value.TabIndex = 4
+        Me.txt_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'SplitContainer2.Panel1
+        'TableLayoutPanel7
         '
-        Me.SplitContainer2.Panel1.Controls.Add(Me.TableLayoutPanel6)
+        Me.TableLayoutPanel7.ColumnCount = 1
+        Me.TableLayoutPanel7.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel7.Controls.Add(Me.btn_clear, 0, 1)
+        Me.TableLayoutPanel7.Controls.Add(Me.btn_Start, 0, 0)
+        Me.TableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TableLayoutPanel7.Location = New System.Drawing.Point(0, 0)
+        Me.TableLayoutPanel7.Name = "TableLayoutPanel7"
+        Me.TableLayoutPanel7.RowCount = 2
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel7.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel7.Size = New System.Drawing.Size(156, 149)
+        Me.TableLayoutPanel7.TabIndex = 1
         '
-        'SplitContainer2.Panel2
+        'btn_clear
         '
-        Me.SplitContainer2.Panel2.Controls.Add(Me.btn_Start)
-        Me.SplitContainer2.Size = New System.Drawing.Size(321, 169)
-        Me.SplitContainer2.SplitterDistance = 229
-        Me.SplitContainer2.TabIndex = 1
-        '
-        'TableLayoutPanel6
-        '
-        Me.TableLayoutPanel6.ColumnCount = 2
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Controls.Add(Me.txt_Respond, 1, 1)
-        Me.TableLayoutPanel6.Controls.Add(Me.Label9, 0, 0)
-        Me.TableLayoutPanel6.Controls.Add(Me.Label10, 0, 1)
-        Me.TableLayoutPanel6.Controls.Add(Me.txt_User, 1, 0)
-        Me.TableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel6.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel6.Name = "TableLayoutPanel6"
-        Me.TableLayoutPanel6.RowCount = 2
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel6.Size = New System.Drawing.Size(229, 169)
-        Me.TableLayoutPanel6.TabIndex = 0
-        '
-        'txt_Respond
-        '
-        Me.txt_Respond.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txt_Respond.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Respond.Location = New System.Drawing.Point(117, 87)
-        Me.txt_Respond.Multiline = True
-        Me.txt_Respond.Name = "txt_Respond"
-        Me.txt_Respond.ReadOnly = True
-        Me.txt_Respond.Size = New System.Drawing.Size(109, 79)
-        Me.txt_Respond.TabIndex = 2
-        Me.txt_Respond.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label9.Location = New System.Drawing.Point(3, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(108, 84)
-        Me.Label9.TabIndex = 0
-        Me.Label9.Text = "String"
-        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label10.Location = New System.Drawing.Point(3, 84)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(108, 85)
-        Me.Label10.TabIndex = 0
-        Me.Label10.Text = "Interaction:"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'txt_User
-        '
-        Me.txt_User.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.txt_User.Font = New System.Drawing.Font("Courier New", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_User.Location = New System.Drawing.Point(117, 3)
-        Me.txt_User.Multiline = True
-        Me.txt_User.Name = "txt_User"
-        Me.txt_User.Size = New System.Drawing.Size(109, 78)
-        Me.txt_User.TabIndex = 1
-        Me.txt_User.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'btn_Start
-        '
-        Me.btn_Start.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.btn_Start.Location = New System.Drawing.Point(0, 0)
-        Me.btn_Start.Name = "btn_Start"
-        Me.btn_Start.Size = New System.Drawing.Size(88, 169)
-        Me.btn_Start.TabIndex = 0
-        Me.btn_Start.Text = "Go"
-        Me.btn_Start.UseVisualStyleBackColor = True
+        Me.btn_clear.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.btn_clear.Location = New System.Drawing.Point(3, 77)
+        Me.btn_clear.Name = "btn_clear"
+        Me.btn_clear.Size = New System.Drawing.Size(150, 69)
+        Me.btn_clear.TabIndex = 1
+        Me.btn_clear.Text = "Clear"
+        Me.btn_clear.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(335, 201)
+        Me.ClientSize = New System.Drawing.Size(571, 181)
         Me.Controls.Add(Me.tbpg_roots)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -664,6 +719,13 @@ Partial Class Form1
         Me.Scont_A.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.tbpg_roots.ResumeLayout(False)
+        Me.tbg_Differentiate.ResumeLayout(False)
+        Me.SplitContainer2.Panel1.ResumeLayout(False)
+        Me.SplitContainer2.Panel2.ResumeLayout(False)
+        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SplitContainer2.ResumeLayout(False)
+        Me.TableLayoutPanel6.ResumeLayout(False)
+        Me.TableLayoutPanel6.PerformLayout()
         Me.tbpg_solver.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.SplitContainer1.Panel1.ResumeLayout(False)
@@ -680,13 +742,7 @@ Partial Class Form1
         Me.TableLayoutPanel4.PerformLayout()
         Me.TableLayoutPanel5.ResumeLayout(False)
         Me.TableLayoutPanel5.PerformLayout()
-        Me.TabPage1.ResumeLayout(False)
-        Me.SplitContainer2.Panel1.ResumeLayout(False)
-        Me.SplitContainer2.Panel2.ResumeLayout(False)
-        CType(Me.SplitContainer2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SplitContainer2.ResumeLayout(False)
-        Me.TableLayoutPanel6.ResumeLayout(False)
-        Me.TableLayoutPanel6.PerformLayout()
+        Me.TableLayoutPanel7.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -727,7 +783,7 @@ Partial Class Form1
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txt_polyvalvalue As System.Windows.Forms.TextBox
     Friend WithEvents rtxt_result As System.Windows.Forms.RichTextBox
-    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents tbg_Differentiate As System.Windows.Forms.TabPage
     Friend WithEvents SplitContainer2 As System.Windows.Forms.SplitContainer
     Friend WithEvents TableLayoutPanel6 As System.Windows.Forms.TableLayoutPanel
     Friend WithEvents txt_Respond As System.Windows.Forms.TextBox
@@ -735,5 +791,9 @@ Partial Class Form1
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents txt_User As System.Windows.Forms.TextBox
     Friend WithEvents btn_Start As System.Windows.Forms.Button
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents txt_value As System.Windows.Forms.TextBox
+    Friend WithEvents TableLayoutPanel7 As System.Windows.Forms.TableLayoutPanel
+    Friend WithEvents btn_clear As System.Windows.Forms.Button
 
 End Class

@@ -31,7 +31,13 @@ Public Class Form1
     End Sub
 
     Private Sub btn_Start_Click(sender As Object, e As EventArgs) Handles btn_Start.Click
-        txt_Respond.Text = EvaluateAdvanced(txt_User.Text, 2)
+        txt_Respond.Text = differentiate(txt_User.Text, txt_value.Text)
+    End Sub
+
+    Private Sub btn_clear_Click(sender As Object, e As EventArgs) Handles btn_clear.Click
+        txt_User.Clear()
+        txt_Respond.Clear()
+        txt_value.Clear()
     End Sub
 End Class
 

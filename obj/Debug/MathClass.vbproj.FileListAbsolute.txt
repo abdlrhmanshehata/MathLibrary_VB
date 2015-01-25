@@ -8,3 +8,4 @@ F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\D
 F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.exe
 F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.xml
 F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.pdb
+F:\Programming\UnPublished\Visual Studio 2012\Projects\MathClass\MathClass\obj\Debug\MathClass.Form2.resources
